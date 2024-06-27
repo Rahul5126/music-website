@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    background: #21252d;
+    position: sticky;
+    z-index: 100;
+}
+
+.navbar-container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+}
+
+nav .navbar-container .sidebarOpen {
+    color: #b71416;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.brand {
+    width: 100px;
+    height: 40px;
+}
+
+nav .navbar-container .brand a {
+    text-decoration: none;
+}
+
+.search-container {
+    margin: 0px 60px;
+    width: 65%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #4c5262;
+    background: #151a1f;
+    color: grey;
+}
+
+.search-icon {
+    font-size: 15px;
+    padding: 3px 0 0 10px;
+}
+
+.search-container input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    width: 90%;
+    color: #fff;
+    font-size: 15px;
+}
+
+.menu .logo-toggle, hr, .social-icons {
+    display: none;
+}
+
+.navbar-container .home-menu {
+    display: flex;
+    margin: auto;
+}
+
+.navbar-container .home-menu li {
+    list-style-type: none;
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.navbar-container .home-menu li:hover {
+    color: #71788c;
+}
+
+.navbar-container .sidebar-menu {
+    display: none;
+}
+
+.search_results {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    margin-top: 30px;
+    overflow: auto;
+}
+
+.search_results .card {
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s linear;
+    display: none;
+}
+
+.search_results .card:hover {
+    /* background: rgb(105, 105, 105, 0.1); */
+    border: 1px solid #71788c;
+}
+
+.search_results .card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-left: 80px;
+}
+
+.search_results .card .artists-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.search_results .card .content {
+    width: 55%;
+    height: 100%;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.search_results .card h5, h6 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.search_results .card h6 {
+    font-size: 11px;
+    color: #73878a;
+}
+
+.search_results .card span {
+    margin-left: 20px;
+}
+
+.search_results .play_button {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Bottom Music Control */
+
+.master_play {
+    background: #21252d;
+    width: 85%;
+    height: 10%;
+    display: none;
+    align-items: center;
+    padding: 0 20px;
+    bottom: 0;
+    margin: 0px 110px;
+    position: fixed;
+    z-index: 100;
+}
+
+.wave {
+    width: 30px;
+    height: 30px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+
+.wave1 {
+    width: 3px;
+    height: 8px;
+    background: #36e2ec;
+    margin-right: 3px;
+    border-radius: 10px 10px 0 0;
+}
+
+.wave1:nth-child(2) {
+    height: 11px;
+    margin-right: 3.5px;
+    animation-delay: 0.4s;
+}
+
+.wave1:nth-child(3) {
+    height: 6px;
+    animation-delay: 0.8s;
+}
+
+/* JavaScript Classes */
+.master_play .active1 .wave1 {
+    animation: wave 0.5s linear infinite;
+}
+
+.master_play .active1 .wave1:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.master_play .active1 .wave1:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes wave {
+    0% {
+        height: 8px;
+    }
+    50% {
+        height: 13px;
+    }
+    100% {
+        height: 8px;
+    }
+}
+
+.master_play img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.master_play .title-name {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.master_play h5 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.master_play h6 {
+    font-size: 11px;
+    color: #4c5262;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bottom-icons {
+    font-size: 20px;
+    color: #fff;
+    margin-left: 50px;
+}
+
+.bottom-icons .b-icons {
+    cursor: pointer;
+    margin: 0 7px;
+    outline: none;
+}
+
+#download-music {
+    color: #fff;
+}
+
+.master_play span {
+    color: #fff;
+    width: 32px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+#current_timeStamp {
+    margin-left: 50px;
+}
+
+                        /* Creation of Music SeekBar  */
+.master_play .bar {
+    position: relative; 
+    width: 40%;
+    height: 2px;
+    background: rgb(105, 105, 170, 0.1);
+    margin: 0 15px 0 10px;
+}
+
+.master_play .bar2 {
+    position: absolute;
+    background: #36e2ec;
+    width: 0;
+    height: 100%;
+    top: 0;
+    transition: 1s linear;
+}
+
+.master_play .dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #36e2ec;
+    border-radius: 50%;
+    left: 0%;
+    top: -1.5px;
+    transition: 1s linear;
+}
+
+.master_play .dot::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #36e2ec;
+    border-radius: 50%;
+    left: -6px;
+    top: -4px;
+    box-shadow: inset 0px 0px 3px #36e2ec;
+}
+
+.bar input {
+    position: absolute;
+    width: 100%;
+    top: -5px;
+    left: 0;
+    cursor: pointer;
+    z-index: 999999999999999999999999999;
+    opacity: .0;
+}
+
+                        /* Creation of Volume Bar  */
+.volume {
+    position: relative;
+    width: 80px;
+    height: 2px;
+    background: rgb(105, 105, 170, 0.1);
+    margin-left: 50px;
+}
+
+.vol-button {
+    position: absolute;
+    color: #fff;
+    font-size: 18px;
+    top: -7px;
+    left: -35px;
+}
+
+.volume input {
+    position: absolute;
+    width: 100%;
+    top: -5px;
+    left: 0;
+    cursor: pointer;
+    z-index: 9999999999999999999999;
+    opacity: 0;
+}
+
+.volume_bar {
+    position: absolute;
+    background: #36e2ec;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: 1s linear;
+}
